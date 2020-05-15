@@ -30,7 +30,7 @@ class RePocket
       Rails.logger.info "[RePocket] Response is empty. Skip sending!"
     else
       Rails.logger.info "[RePocket] Sending Email BEG..."
-      DailyMail.for(user, retrieve).deliver_later
+      DailyMail.for(user, retrieve).deliver_now
       Rails.logger.info "[RePocket] Sending Email END..."
     end
   end

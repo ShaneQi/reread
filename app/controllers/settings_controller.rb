@@ -13,7 +13,7 @@ class SettingsController < ApplicationController
     email_now = @settings.email_was.blank?
 
     if @settings.save
-      RePocketJob.perform_later(current_user) if email_now
+      RePocketJob.perform_now(current_user) if email_now
 
       redirect_to settings_path, notice: "We have updated your Settings. You'll receive an email from us soon!"
     else

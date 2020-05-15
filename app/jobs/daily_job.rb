@@ -6,7 +6,7 @@ class DailyJob < ActiveJob::Base
     User.enabled.find_each do |user|
       if user.can_send_now?(current_time)
         Rails.logger.info "[DailyJob] Sending for User ID #{user.id}"
-        RePocketJob.perform_later(user)
+        RePocketJob.perform_now(user)
       end
     end
   end

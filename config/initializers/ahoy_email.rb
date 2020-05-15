@@ -9,7 +9,7 @@ class EmailSubscriber
     user = event[:message].user
     url  = event[:url]
 
-    ReadPocketJob.perform_later(user, url)
+    ReadPocketJob.perform_now(user, url)
   end
 end
 
