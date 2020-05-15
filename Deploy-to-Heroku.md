@@ -23,3 +23,34 @@ Make sure you have [Heroku cli](https://devcenter.heroku.com/articles/heroku-cli
 ```
 heroku stack:set heroku-16 -a [YOUR_HEROKU_APP_NAME]
 ```
+
+## Add Add-ons
+
+In Heroku app 'Resources' tab, add these add-ons:
+
+1. Heroku Redis
+2. SendGrid
+3. Heroku Scheduler
+
+No further configurations needed on the add-ons.
+
+## Deploy
+
+Follow the instructions in the Heroku app 'Deploy' tab.  
+Either Heroku Git or Github should work.  
+Either automatic deploys or manual deploy should work.
+
+## Init Database
+
+Make sure you have [Heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
+
+```
+heroku run rake db:schema:load -a [YOUR_HEROKU_APP_NAME]
+```
+
+## Setup Scheduler
+
+1. In Heroku app 'Resources' tab, click 'Heroku Scheduler'.
+2. Create job, schedule should be 'Every hour at :00', run command should be `rake run_daily_job`
+
+# The End
