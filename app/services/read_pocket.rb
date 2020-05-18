@@ -1,5 +1,5 @@
 class ReadPocket < ActiveJob::Base
-  POCKET_URL = 'https://getpocket.com/a/read/'.freeze
+  POCKET_URL = 'https://app.getpocket.com/read/'.freeze
 
   def initialize(user, url)
     @user = user

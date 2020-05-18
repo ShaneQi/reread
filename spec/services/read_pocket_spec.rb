@@ -20,7 +20,7 @@ RSpec.describe ReadPocket do
     end
 
     context 'when user prefers to be redirected to Pocket' do
-      let(:redirect_url) { 'https://getpocket.com/a/read/12345' }
+      let(:redirect_url) { 'https://app.getpocket.com/read/12345' }
       let!(:pocket)      { user.pockets.create!(raw: { item_id: '12345' }) }
 
       before { user.setting = create(:setting, redirect_to: :pocket_url, archive: false) }

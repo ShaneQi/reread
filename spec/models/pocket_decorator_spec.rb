@@ -44,7 +44,7 @@ RSpec.describe PocketDecorator do
     end
 
     it 'returns pocket url' do
-      expect(decorator.url(:pocket_url)).to eq 'https://getpocket.com/a/read/885500'
+      expect(decorator.url(:pocket_url)).to eq 'https://app.getpocket.com/read/885500'
     end
   end
 
